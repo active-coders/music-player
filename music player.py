@@ -2,7 +2,6 @@
 from pygame import mixer
 from pathlib import Path
 from time import sleep
-
 from tinytag import TinyTag
 mixer.init()  # initialise sound
 while True:
@@ -15,7 +14,10 @@ while True:
             tag = TinyTag.get(music)
             mixer.music.load(music)
             mixer.music.play()
-            print(tag.duration)
+            sleep(5)
+            mixer.music.pause()
+            sleep(5)
+            mixer.music.unpause()
             sleep(tag.duration)
             
         print("")
